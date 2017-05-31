@@ -32,10 +32,11 @@ module.exports = function() {
   app.use(passport.session());
 
   // secure
-  app.use(helmet());
-  app.use(helmet.frameguard({ action: 'deny' })); //xframe
+  //app.use(helmet());
+  app.use(helmet.xframe());
+  //app.use(helmet.frameguard({ action: 'deny' })); //xframe
   app.use(helmet.xssFilter());
-  app.use(helmet.noSniff());
+  app.use(helmet.nosniff());
   //app.use(helmet.hidePoweredBy({ setTo: 'PHP 5.5.14'}));
   app.disable('x-powered-by'); // Hide Powered-By
 
