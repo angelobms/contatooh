@@ -1,6 +1,6 @@
 var http = require('http');
 var app = require('./config/express')();
-var	config	=	require('./config/config')();
+var config = require('./config/config')();
 
 require('./config/passport')();
 require('./config/database')(config.db);
